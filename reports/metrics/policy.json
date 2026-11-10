@@ -1,0 +1,11 @@
+[
+  {
+    "policy_type":"top_n_by_expected_profit",
+    "top_n":49,
+    "contact_rate":0.1368715084,
+    "gain":11.0,
+    "cost":3.0,
+    "derived_from":"valid",
+    "notes":"Policy derived from VALID and applied one-shot on TEST"
+  }
+]

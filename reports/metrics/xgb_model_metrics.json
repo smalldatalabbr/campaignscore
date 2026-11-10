@@ -1,0 +1,41 @@
+{
+  "valid": {
+    "pr_auc_valid": 0.6820294907636378,
+    "best_threshold_valid": 0.27,
+    "expected_profit_valid": 235.0,
+    "selected_valid": 50,
+    "selected_rate_valid": 0.13966480446927373,
+    "confusion_matrix_valid": [
+      [
+        290,
+        15
+      ],
+      [
+        18,
+        35
+      ]
+    ],
+    "gain_proxy": 11.0,
+    "cost_proxy": 3.0
+  },
+  "test": {
+    "threshold_from_valid": 0.27,
+    "roc_auc_test": 0.90617777255455,
+    "pr_auc_test": 0.6399030027025666,
+    "expected_profit_test": 248.0,
+    "selected_test": 64,
+    "selected_rate_test": 0.14285714285714285,
+    "confusion_matrix_test": [
+      [
+        357,
+        24
+      ],
+      [
+        27,
+        40
+      ]
+    ],
+    "gain_proxy": 11.0,
+    "cost_proxy": 3.0
+  }
+}

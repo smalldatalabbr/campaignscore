@@ -1,0 +1,10 @@
+[
+  {
+    "total_contacts":49,
+    "contact_rate":0.109375,
+    "expected_profit_sum":229.4574890137,
+    "realized_profit_sum":216.0,
+    "response_rate_selected":0.6734693878,
+    "response_rate_base":0.1495535714
+  }
+]
