@@ -196,6 +196,16 @@ O CampaignScore demonstra como técnicas de segmentação e modelagem preditiva 
 
 O case entrega modelos treinados, bases processadas e artefatos de análise que estabelecem uma base técnica para futuras aplicações no contexto do **CRM Intelligence**.
 
+## 9. Fontes e referências
+
+Os dados utilizados neste case são provenientes do conjunto público **Customer Personality Analysis**, disponível no Kaggle.
+
+**Fonte:** [Customer Personality Analysis - Kaggle](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis)
+
+A base reúne informações demográficas e comportamentais dos clientes, dados de consumo, hábitos de compra e registros de resposta a campanhas de marketing. Esse conjunto de dados também foi utilizado no desafio técnico do iFood que inspirou o desenvolvimento deste case.
+
+Os dados são utilizados para fins analíticos e demonstrativos, representando um cenário fictício de negócio. O Case não possui vínculo comercial ou institucional com o Kaggle ou com a empresa que inspirou o desafio.
+
 ## Tecnologias
 
 * **Python 3.12+:** implementação do fluxo analítico e execução dos notebooks.
