@@ -1,0 +1,127 @@
+{
+    "model_name": "customer_segmentation_kmeans",
+    "artifact_version": "1.0.0",
+    "created_at_utc": "2026-11-09T18:52:20.467003+00:00",
+    "input": {
+        "dataset": "/home/jhonathan/SDL/campaignscore/data/processed/customer_segmentation.parquet",
+        "identifier_column": "ID",
+        "features": [
+            "Age",
+            "Income",
+            "Kidhome",
+            "Teenhome",
+            "Recency",
+            "TenureDays",
+            "MntWines",
+            "MntFruits",
+            "MntMeatProducts",
+            "MntFishProducts",
+            "MntSweetProducts",
+            "MntGoldProds",
+            "NumDealsPurchases",
+            "NumWebPurchases",
+            "NumCatalogPurchases",
+            "NumStorePurchases",
+            "NumWebVisitsMonth",
+            "AcceptedCmp1",
+            "AcceptedCmp2",
+            "AcceptedCmp3",
+            "AcceptedCmp4",
+            "AcceptedCmp5",
+            "Education"
+        ],
+        "feature_groups": {
+            "standard": [
+                "Age",
+                "Income",
+                "Kidhome",
+                "Teenhome",
+                "Recency",
+                "TenureDays"
+            ],
+            "skewed": [
+                "MntWines",
+                "MntFruits",
+                "MntMeatProducts",
+                "MntFishProducts",
+                "MntSweetProducts",
+                "MntGoldProds",
+                "NumDealsPurchases",
+                "NumWebPurchases",
+                "NumCatalogPurchases",
+                "NumStorePurchases",
+                "NumWebVisitsMonth"
+            ],
+            "binary": [
+                "AcceptedCmp1",
+                "AcceptedCmp2",
+                "AcceptedCmp3",
+                "AcceptedCmp4",
+                "AcceptedCmp5"
+            ],
+            "categorical": [
+                "Education"
+            ]
+        }
+    },
+    "preprocessing": {
+        "standard": [
+            "SimpleImputer(strategy='median')",
+            "StandardScaler()"
+        ],
+        "skewed": [
+            "SimpleImputer(strategy='median')",
+            "PowerTransformer(method='yeo-johnson', standardize=True)"
+        ],
+        "categorical": [
+            "SimpleImputer(strategy='most_frequent')",
+            "OneHotEncoder(handle_unknown='ignore', sparse_output=False)"
+        ],
+        "binary": [
+            "SimpleImputer(strategy='most_frequent')"
+        ]
+    },
+    "algorithm": {
+        "name": "KMeans",
+        "parameters": {
+            "n_clusters": 3,
+            "init": "k-means++",
+            "n_init": 20,
+            "max_iter": 300,
+            "random_state": 42,
+            "tol": 0.0001,
+            "algorithm": "lloyd"
+        }
+    },
+    "output": {
+        "cluster_column": "cluster_id",
+        "label_column": "segment_label",
+        "cluster_labels": {
+            "0": "Baixo consumo",
+            "1": "Alto consumo multicanal",
+            "2": "Consumo intermediário orientado a ofertas"
+        }
+    },
+    "training": {
+        "n_samples": 2229,
+        "input_dimensions": 23,
+        "transformed_dimensions": 27,
+        "cluster_distribution": {
+            "0": 894,
+            "1": 671,
+            "2": 664
+        },
+        "reference_metrics": {
+            "silhouette": 0.21328203837356627,
+            "calinski_harabasz": 806.5112499220679,
+            "davies_bouldin": 1.752922472008082,
+            "inertia": 23188.175129854026
+        }
+    },
+    "environment": {
+        "python": "3.12.13",
+        "scikit_learn": "1.9.1",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0"
+    }
+}

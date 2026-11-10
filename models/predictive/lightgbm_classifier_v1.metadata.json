@@ -1,0 +1,88 @@
+{
+    "model_name": "LightGBM",
+    "artifact_version": "1.0.0",
+    "features": [
+        "MntWines",
+        "MntFruits",
+        "MntMeatProducts",
+        "MntFishProducts",
+        "MntSweetProducts",
+        "MntGoldProds",
+        "NumActiveChannels",
+        "PreferredChannel",
+        "NumDealsPurchases",
+        "AcceptedCmp1",
+        "AcceptedCmp2",
+        "AcceptedCmp3",
+        "AcceptedCmp4",
+        "AcceptedCmp5",
+        "FamilyProfile",
+        "Age",
+        "Income",
+        "Education",
+        "TenureDays",
+        "Recency",
+        "NumWebVisitsMonth"
+    ],
+    "target": "Response",
+    "identifier_column": "ID",
+    "best_hyperparameters": {
+        "model__subsample": 1.0,
+        "model__reg_lambda": 1.0,
+        "model__reg_alpha": 0.5,
+        "model__num_leaves": 15,
+        "model__n_estimators": 150,
+        "model__min_child_samples": 40,
+        "model__max_depth": -1,
+        "model__learning_rate": 0.03,
+        "model__colsample_bytree": 1.0
+    },
+    "selection": {
+        "criterion": "observed_profit_per_1000",
+        "validation_folds": 5,
+        "results": {
+            "Best_ObservedProfit_per_1000_mean": 588.8537437446889,
+            "Best_ObservedProfit_per_1000_std": 50.58854383431122,
+            "Best_ExpectedProfit_per_1000_mean": 451.1178257817628,
+            "Best_AP_mean": 0.6586010288669383,
+            "Best_AP_std": 0.028051426595721317,
+            "Best_ROC_AUC_mean": 0.8997118371497305,
+            "Best_ROC_AUC_std": 0.015520127902171433,
+            "Best_Brier_mean": 0.0811105144062347
+        }
+    },
+    "test_metrics": {
+        "Model": "LightGBM",
+        "AveragePrecision": 0.6994329877446057,
+        "ROC_AUC": 0.9177923049659353,
+        "BrierScore": 0.0764944219295207,
+        "BalancedAccuracy@0.50": 0.701039656598275,
+        "Precision@0.50": 0.8235294117647058,
+        "Recall@0.50": 0.417910447761194,
+        "F1@0.50": 0.5544554455445545,
+        "Precision@10%": 0.7333333333333333,
+        "Recall@10%": 0.4925373134328358,
+        "Precision@20%": 0.5555555555555556,
+        "Recall@20%": 0.746268656716418
+    },
+    "test_economics": {
+        "CustomersTotal": 446,
+        "CustomersSelected": 72,
+        "SelectionRate": 0.16143497757847533,
+        "ExpectedConversions": 35.93120171356128,
+        "ExpectedResponseRateSelected": 0.49904446824390664,
+        "ExpectedRevenue_MU": 395.24321884917407,
+        "ContactCost_MU": 216.0,
+        "ExpectedProfit_MU": 179.24321884917407,
+        "ObservedConversions": 44,
+        "ObservedResponseRateSelected": 0.6111111111111112,
+        "ObservedRevenue_MU": 484.0,
+        "ObservedProfit_MU": 268.0,
+        "Model": "LightGBM"
+    },
+    "economic_assumptions": {
+        "contact_cost": 3.0,
+        "revenue_per_conversion": 11.0,
+        "threshold": 0.2727272727272727
+    }
+}

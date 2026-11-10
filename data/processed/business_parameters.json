@@ -1,0 +1,17 @@
+{
+    "economic_parameters": {
+        "unit": "MU",
+        "values": {
+            "Z_CostContact": 3,
+            "Z_Revenue": 11
+        },
+        "definitions": {
+            "Z_CostContact": "Custo de contato por cliente",
+            "Z_Revenue": "Receita por conversão positiva"
+        }
+    },
+    "reference": {
+        "reference_date": "2014-06-29",
+        "reference_year": 2014
+    }
+}
